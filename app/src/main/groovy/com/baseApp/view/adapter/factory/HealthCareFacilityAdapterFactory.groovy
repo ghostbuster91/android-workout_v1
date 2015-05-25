@@ -5,7 +5,7 @@ import com.baseApp.view.adapter.HealthCareFacilityAdapter
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class HealthCareFacilityAdapterFactory implements BaseFactory<HealthCareFacilityAdapter, HealthCareFacility> {
+class HealthCareFacilityAdapterFactory implements BaseFactory<HealthCareFacility, HealthCareFacilityAdapter> {
 
     HealthCareFacilityAdapter createAdapter(HealthCareFacility model) {
         return new HealthCareFacilityAdapter(model)

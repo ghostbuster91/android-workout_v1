@@ -5,7 +5,7 @@ import com.baseApp.view.adapter.DoctorViewAdapter
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class DoctorViewAdapterFactory implements BaseFactory<DoctorViewAdapter, Doctor> {
+class DoctorViewAdapterFactory implements BaseFactory<Doctor, DoctorViewAdapter> {
 
     @Override
     DoctorViewAdapter createAdapter(Doctor model) {
