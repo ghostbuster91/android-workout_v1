@@ -14,7 +14,7 @@ import groovy.transform.CompileStatic
 @CompileStatic
 class DoctorViewAdapter implements ModelAdapter{
 
-    private Doctor doctor
+    private final Doctor doctor
 
     DoctorViewAdapter(Doctor doctor) {
         this.doctor = doctor
