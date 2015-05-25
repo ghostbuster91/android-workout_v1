@@ -21,6 +21,7 @@ class DoctorViewAdapter implements ModelAdapter{
     }
 
     View createViewForObject(Context context, ViewGroup parent) {
+        //CR: same here
         LayoutInflater inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         View doctorRow = inflater.inflate(R.layout.doctor_row, parent, false)
@@ -29,7 +30,8 @@ class DoctorViewAdapter implements ModelAdapter{
         TextView lastNameTv = doctorRow.findViewById(R.id.doctor_lastName) as TextView
         ImageView avatar = doctorRow.findViewById(R.id.doctor_avatar) as ImageView
 
-
+        //CR: concat strings here
+        //CR: use groovy style property
         firstNameTv.setText(doctor.firstName)
         lastNameTv.setText(doctor.lastName)
 

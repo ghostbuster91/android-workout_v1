@@ -19,6 +19,7 @@ class HealthCareFacilityAdapter implements ModelAdapter{
     }
 
     View createViewForObject(Context context,ViewGroup parent){
+        //CR: use LayoutInflater.from
         LayoutInflater inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
         View facilityRow = inflater.inflate(R.layout.healthcare_row, parent,false)

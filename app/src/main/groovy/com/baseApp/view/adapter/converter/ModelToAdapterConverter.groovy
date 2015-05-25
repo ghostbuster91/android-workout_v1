@@ -11,17 +11,19 @@ import groovy.transform.CompileStatic
 @CompileStatic
 enum ModelToAdapterConverter {
 
-    INSTANCE
+    INSTANCE //CR: Singleton is not best pattern in the world
 
-    private Map<Class<? extends AbstractModel>,Class<? extends ModelAdapter>> adapters
+    private Map<Class<? extends AbstractModel>, Class<? extends ModelAdapter>> adapters
 
     private ModelToAdapterConverter() {
+        //CR: It is groovy. use Map declaration
         adapters = new HashMap<>()
-        adapters.put(Doctor ,DoctorViewAdapter)
-        adapters.put(HealthCareFacility ,HealthCareFacilityAdapter)
+        adapters.put(Doctor, DoctorViewAdapter)
+        adapters.put(HealthCareFacility, HealthCareFacilityAdapter)
     }
 
-    ModelAdapter getAdapterFor(AbstractModel model){
+    ModelAdapter getAdapterFor(AbstractModel model) {
+        //CR: newInstance? ryly
         return adapters[model.class].newInstance(model)
 
     }
