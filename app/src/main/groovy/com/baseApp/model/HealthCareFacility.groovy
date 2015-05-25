@@ -3,9 +3,8 @@ package com.baseApp.model
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class HealthCareFacility {
+class HealthCareFacility extends AbstractModel{
 
-    Integer id
     String name
     String address
     Float lat
