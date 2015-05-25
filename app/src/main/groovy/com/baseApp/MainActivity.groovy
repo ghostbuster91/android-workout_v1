@@ -4,9 +4,9 @@ import android.app.Activity
 import android.os.Bundle
 import android.widget.ListView
 import com.baseApp.model.AbstractModel
-import com.baseApp.view.adapter.HealthObjectsListAdapter
 import com.baseApp.model.Doctor
 import com.baseApp.model.HealthCareFacility
+import com.baseApp.view.adapter.HealthObjectsListAdapter
 import com.baseApp.view.adapter.converter.ModelToAdapterConverter
 import groovy.transform.CompileStatic
 
@@ -31,7 +31,7 @@ final class MainActivity extends Activity {
         HealthObjectsListAdapter adapter = new HealthObjectsListAdapter(this)
         view.setAdapter(adapter)
 
-        ModelToAdapterConverter converter = ModelToAdapterConverter.INSTANCE
+        ModelToAdapterConverter converter = new ModelToAdapterConverter()
 
         adapter.addAll(list_data.collect{
             converter.getAdapterFor(it)

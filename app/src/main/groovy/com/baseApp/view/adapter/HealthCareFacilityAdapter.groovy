@@ -1,12 +1,11 @@
 package com.baseApp.view.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import com.baseApp.R
 import com.baseApp.model.HealthCareFacility
+import com.baseApp.utils.LayoutInflaterWrapper
 import groovy.transform.CompileStatic
 
 @CompileStatic
@@ -18,17 +17,14 @@ class HealthCareFacilityAdapter implements ModelAdapter{
         this.facility = facility
     }
 
-    View createViewForObject(Context context,ViewGroup parent){
-        //CR: use LayoutInflater.from
-        LayoutInflater inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-        View facilityRow = inflater.inflate(R.layout.healthcare_row, parent,false)
+    View createViewForObject(ViewGroup parent) {
+        View facilityRow = LayoutInflaterWrapper.inflate(R.layout.healthcare_row, parent)
 
         TextView nameTv = facilityRow.findViewById(R.id.healthcare_name) as TextView
         TextView addressTv = facilityRow.findViewById(R.id.healthcare_address) as TextView
 
-        nameTv.setText(facility.name)
-        addressTv.setText(facility.address)
+        nameTv.text = facility.name
+        addressTv.text = facility.address
 
         return facilityRow
     }

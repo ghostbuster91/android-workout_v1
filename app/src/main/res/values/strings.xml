@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">BaseApp</string>
-    <string name="last_name">Nazwisko:&#160;</string>
-    <string name="first_name">Imie:&#160;</string>
-    <string name="facility_name">Nazwa:&#160;</string>
-    <string name="facility_address">Adres:&#160;</string>
+    <string name="last_name">Nazwisko</string>
+    <string name="first_name">Imie</string>
+    <string name="facility_name">Nazwa</string>
+    <string name="facility_address">Adres</string>
 </resources>

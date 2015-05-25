@@ -1,15 +1,9 @@
 package com.baseApp.view.adapter
 
 import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
-import android.widget.TextView
-import com.baseApp.R
-import com.baseApp.model.AbstractModel
-import com.baseApp.model.Doctor
-import com.baseApp.model.HealthCareFacility
 import groovy.transform.CompileStatic
 
 @CompileStatic
@@ -39,7 +33,7 @@ class HealthObjectsListAdapter extends BaseAdapter{
 
     @Override
     View getView(int position, View convertView, ViewGroup parent) {
-        return data.get(position).createViewForObject(context,parent)
+        return data.get(position).createViewForObject(parent)
     }
 
     @Override

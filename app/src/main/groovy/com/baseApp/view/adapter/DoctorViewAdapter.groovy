@@ -1,13 +1,12 @@
 package com.baseApp.view.adapter
 
-import android.content.Context
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import com.baseApp.R
 import com.baseApp.model.Doctor
+import com.baseApp.utils.LayoutInflaterWrapper
 import com.bumptech.glide.Glide
 import groovy.transform.CompileStatic
 
@@ -20,24 +19,19 @@ class DoctorViewAdapter implements ModelAdapter{
         this.doctor = doctor
     }
 
-    View createViewForObject(Context context, ViewGroup parent) {
-        //CR: same here
-        LayoutInflater inflater = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
-
-        View doctorRow = inflater.inflate(R.layout.doctor_row, parent, false)
+    View createViewForObject(ViewGroup parent) {
+        View doctorRow = LayoutInflaterWrapper.inflate(R.layout.doctor_row, parent)
 
         TextView firstNameTv = doctorRow.findViewById(R.id.doctor_firstName) as TextView
         TextView lastNameTv = doctorRow.findViewById(R.id.doctor_lastName) as TextView
         ImageView avatar = doctorRow.findViewById(R.id.doctor_avatar) as ImageView
 
         //CR: concat strings here
-        //CR: use groovy style property
-        firstNameTv.setText(doctor.firstName)
-        lastNameTv.setText(doctor.lastName)
+        firstNameTv.text = "${parent.context.getString(R.string.first_name)}: ${doctor.firstName}"
+        lastNameTv.text = "${parent.context.getString(R.string.last_name)}: ${doctor.lastName}"
 
-        Glide.with(context).load(doctor.avatarUrl).into(avatar)
+        Glide.with(parent.context).load(doctor.avatarUrl).into(avatar)
 
         return doctorRow
     }
-
 }

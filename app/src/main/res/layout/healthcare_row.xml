@@ -12,14 +12,14 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/facility_name"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/facility_name" />
 
         <TextView
             android:id="@+id/healthcare_name"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="3" />
     </LinearLayout>
 
     <LinearLayout
@@ -29,15 +29,15 @@
         <TextView
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:text="@string/facility_address"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:text="@string/facility_address" />
+
         <TextView
             android:id="@+id/healthcare_address"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_weight="3"/>
+            android:layout_weight="3" />
     </LinearLayout>
-
 
 
 </LinearLayout>
