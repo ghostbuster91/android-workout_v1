@@ -33,8 +33,7 @@ class DoctorViewAdapter implements ModelAdapter{
         firstNameTv.setText(doctor.firstName)
         lastNameTv.setText(doctor.lastName)
 
-        Glide.with(context).load(doctor.avatarUrl)
-                .centerCrop().fitCenter().into(avatar)
+        Glide.with(context).load(doctor.avatarUrl).into(avatar)
 
         return doctorRow
     }
