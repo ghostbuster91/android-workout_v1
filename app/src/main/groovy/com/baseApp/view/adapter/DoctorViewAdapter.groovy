@@ -1,5 +1,6 @@
 package com.baseApp.view.adapter
 
+import android.content.Context
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -26,12 +27,16 @@ class DoctorViewAdapter implements ModelAdapter{
         TextView lastNameTv = doctorRow.findViewById(R.id.doctor_lastName) as TextView
         ImageView avatar = doctorRow.findViewById(R.id.doctor_avatar) as ImageView
 
-        //CR: concat strings here
         firstNameTv.text = "${parent.context.getString(R.string.first_name)}: ${doctor.firstName}"
         lastNameTv.text = "${parent.context.getString(R.string.last_name)}: ${doctor.lastName}"
 
         Glide.with(parent.context).load(doctor.avatarUrl).into(avatar)
 
         return doctorRow
+    }
+
+    @Override
+    void onItemClicked(Context context) {
+
     }
 }

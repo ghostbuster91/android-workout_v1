@@ -1,23 +1,19 @@
-package com.baseApp.view.adapter.converter
+package com.baseApp.view.adapter.factory
 
 import com.baseApp.model.AbstractModel
 import com.baseApp.model.Doctor
 import com.baseApp.model.HealthCareFacility
 import com.baseApp.view.adapter.ModelAdapter
-import com.baseApp.view.adapter.factory.BaseFactory
-import com.baseApp.view.adapter.factory.DoctorViewAdapterFactory
-import com.baseApp.view.adapter.factory.HealthCareFacilityAdapterFactory
 import groovy.transform.CompileStatic
 
 @CompileStatic
-class ModelToAdapterConverter {
+class AdapterPrototypeFactory {
 
     private final Map<Class<? extends AbstractModel>, BaseFactory> adapters = [:]
 
-    ModelToAdapterConverter() {
+    AdapterPrototypeFactory() {
 //        adapters = [(Doctor): new DoctorViewAdapterFactory(),
 //                    (HealthCareFacility): new HealthCareFacilityAdapterFactory()]
-        adapters
         adapters.put(Doctor, new DoctorViewAdapterFactory())
         adapters.put(HealthCareFacility, new HealthCareFacilityAdapterFactory())
     }

@@ -7,6 +7,6 @@ class HealthCareFacility extends AbstractModel{
 
     String name
     String address
-    Float lat
-    Float lng
+    String lat
+    String lng
 }

@@ -1,5 +1,8 @@
 package com.baseApp.view.adapter
 
+import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
@@ -27,5 +30,13 @@ class HealthCareFacilityAdapter implements ModelAdapter{
         addressTv.text = facility.address
 
         return facilityRow
+    }
+
+    @Override
+    void onItemClicked(Context context) {
+        String uri = "geo:0,0?q=${facility.lat},${facility.lng}(TO+TU)"
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(uri))
+
+        context.startActivity(intent)
     }
 }
